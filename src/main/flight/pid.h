@@ -195,3 +195,5 @@ void autotuneUpdateState(void);
 void autotuneFixedWingUpdate(const flight_dynamics_index_t axis, float desiredRateDps, float reachedRateDps, float pidOutput);
 
 pidType_e pidIndexGetType(pidIndex_e pidIndex);
+
+void FAST_CODE pidSetExpectedGyroError(flight_dynamics_index_t axis, int16_t error);

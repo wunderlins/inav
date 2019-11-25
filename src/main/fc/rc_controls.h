@@ -105,3 +105,5 @@ rollPitchStatus_e calculateRollPitchCenterStatus(void);
 void processRcStickPositions(throttleStatus_e throttleStatus);
 
 int32_t getRcStickDeflection(int32_t axis);
+
+bool isAirmodeActive(void);

@@ -325,3 +325,7 @@ void processRcStickPositions(throttleStatus_e throttleStatus)
 int32_t getRcStickDeflection(int32_t axis) {
     return MIN(ABS(rxGetChannelValue(axis) - PWM_RANGE_MIDDLE), 500);
 }
+
+bool isAirmodeActive(void) {
+    return (IS_RC_MODE_ACTIVE(BOXAIRMODE) || feature(FEATURE_AIRMODE));
+}

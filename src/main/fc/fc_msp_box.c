@@ -86,6 +86,7 @@ static const box_t boxes[CHECKBOX_ITEM_COUNT + 1] = {
     { BOXUSER2, "USER2", 48 },
     { BOXLOITERDIRCHN, "LOITER CHANGE", 49 },
     { BOXMSPRCOVERRIDE, "MSP RC OVERRIDE", 50 },
+    { BOXTAILTUNE, "TAILTUNE", 51 },
     { CHECKBOX_ITEM_COUNT, NULL, 0xFF }
 };
 
@@ -297,6 +298,8 @@ void initActiveBoxIds(void)
 #if defined(USE_RX_MSP) && defined(USE_MSP_RC_OVERRIDE)
     activeBoxIds[activeBoxIdCount++] = BOXMSPRCOVERRIDE;
 #endif
+
+    activeBoxIds[activeBoxIdCount++] = BOXTAILTUNE;
 }
 
 #define IS_ENABLED(mask) (mask == 0 ? 0 : 1)
@@ -356,7 +359,8 @@ void packBoxModeFlags(boxBitmask_t * mspBoxModeFlags)
 #if defined(USE_RX_MSP) && defined(USE_MSP_RC_OVERRIDE)
     CHECK_ACTIVE_BOX(IS_ENABLED(IS_RC_MODE_ACTIVE(BOXMSPRCOVERRIDE)),   BOXMSPRCOVERRIDE);
 #endif
-
+    CHECK_ACTIVE_BOX(IS_ENABLED(IS_RC_MODE_ACTIVE(BOXTAILTUNE)),        BOXTAILTUNE);
+	
     memset(mspBoxModeFlags, 0, sizeof(boxBitmask_t));
     for (uint32_t i = 0; i < activeBoxIdCount; i++) {
         if (activeBoxes[activeBoxIds[i]]) {

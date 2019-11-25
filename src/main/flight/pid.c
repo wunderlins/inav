@@ -116,6 +116,8 @@ int32_t axisPID_P[FLIGHT_DYNAMICS_INDEX_COUNT], axisPID_I[FLIGHT_DYNAMICS_INDEX_
 
 STATIC_FASTRAM pidState_t pidState[FLIGHT_DYNAMICS_INDEX_COUNT];
 
+STATIC_FASTRAM int16_t expectedGyroError[3] = {0};
+
 static EXTENDED_FASTRAM pt1Filter_t windupLpf[XYZ_AXIS_COUNT];
 static EXTENDED_FASTRAM uint8_t itermRelax;
 static EXTENDED_FASTRAM uint8_t itermRelaxType;
@@ -705,9 +707,14 @@ static float applyDBoost(pidState_t *pidState, flight_dynamics_index_t axis, flo
 }
 #endif
 
+void FAST_CODE pidSetExpectedGyroError(flight_dynamics_index_t axis, int16_t error)
+{
+    expectedGyroError[axis] = error;
+}
+
 static void FAST_CODE pidApplyMulticopterRateController(pidState_t *pidState, flight_dynamics_index_t axis, float dT)
 {
-    const float rateError = pidState->rateTarget - pidState->gyroRate;
+    const float rateError = pidState->rateTarget - pidState->gyroRate + (float)expectedGyroError[axis];
     const float newPTerm = pTermProcess(pidState, axis, rateError, dT);
 
     // Calculate new D-term
