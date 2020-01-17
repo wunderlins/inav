@@ -23,7 +23,7 @@
  */
 
 #pragma once
-#if defined(KAKUTEF4V2)
+#if defined(KAKUTEF4V2) || defined(KAKUTEF4V2TRI)
 #   define TARGET_BOARD_IDENTIFIER "KTV2"
 #   define USBD_PRODUCT_STRING "KakuteF4-V2"
 #else
@@ -53,7 +53,7 @@
 #define USE_ACC_MPU6500
 #define ACC_MPU6500_ALIGN       CW270_DEG
 
-#ifdef KAKUTEF4V2
+#if defined(KAKUTEF4V2) || defined(KAKUTEF4V2TRI)
 #   define USE_I2C
 #   define USE_I2C_DEVICE_1
 #   define I2C1_SCL                PB8        // SCL pad
@@ -68,8 +68,6 @@
 #   define USE_MAG_IST8310
 #   define USE_MAG_IST8308
 #   define USE_MAG_LIS3MDL
-
-#   define TEMPERATURE_I2C_BUS     BUS_I2C1
 
 #   define USE_BARO
 #   define BARO_I2C_BUS            BUS_I2C1
@@ -108,7 +106,7 @@
 #define UART6_RX_PIN            PC7
 #define UART6_TX_PIN            PC6
 
-#ifdef KAKUTEF4V2
+#if defined(KAKUTEF4V2) || defined(KAKUTEF4V2TRI)
 #   define USE_UART4
 #   define UART4_RX_PIN            PA1
 #   define UART4_TX_PIN            PA0
@@ -147,10 +145,11 @@
 #define ADC_CHANNEL_3_PIN           PC1
 
 #define USE_LED_STRIP
+#if !defined(KAKUTEF4V2TRI)
 #define WS2811_PIN                      PC8
-#define WS2811_DMA_HANDLER_IDENTIFER    DMA2_ST4_HANDLER
-#define WS2811_DMA_STREAM               DMA2_Stream4
-#define WS2811_DMA_CHANNEL              DMA_Channel_7
+#else
+#define WS2811_PIN                      PA2
+#endif
 
 #define VBAT_ADC_CHANNEL            ADC_CHN_1
 #define CURRENT_METER_ADC_CHANNEL   ADC_CHN_2
@@ -169,9 +168,11 @@
 #define TARGET_IO_PORTC 0xffff
 #define TARGET_IO_PORTD        (BIT(2))
 
+#if defined(KAKUTEF4V2TRI)
+#define USE_DSHOT
+#endif
 
-
-#ifdef KAKUTEF4V2
+#if defined(KAKUTEF4V2) || defined(KAKUTEF4V2TRI)
 #   define MAX_PWM_OUTPUT_PORTS       4
 #else
 #   define MAX_PWM_OUTPUT_PORTS       6

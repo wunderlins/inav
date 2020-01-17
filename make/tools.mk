@@ -8,7 +8,7 @@
 ###############################################################
 
 GCC_REQUIRED_VERSION ?= 8.2.1
-ARM_SDK_DIR ?= $(TOOLS_DIR)/gcc-arm-none-eabi-8-2018-q4-major
+ARM_SDK_DIR ?= $(TOOLS_DIR)/gcc-arm-none-eabi-8-2019-q3-update
 
 .PHONY: arm_sdk_version
 

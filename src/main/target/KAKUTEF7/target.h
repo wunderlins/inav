@@ -94,7 +94,11 @@
 
 #define USE_SPI
 #define USE_SPI_DEVICE_1   //SD Card
-#define USE_SPI_DEVICE_2   //OSD
+
+#ifndef KAKUTEF7HDV
+    #define USE_SPI_DEVICE_2   //OSD
+#endif
+
 #define USE_SPI_DEVICE_4   //ICM20689
 
 #define SPI1_NSS_PIN            PA4
@@ -102,20 +106,24 @@
 #define SPI1_MISO_PIN           PA6
 #define SPI1_MOSI_PIN           PA7
 
-#define SPI2_NSS_PIN            PB12
-#define SPI2_SCK_PIN            PB13
-#define SPI2_MISO_PIN           PB14
-#define SPI2_MOSI_PIN           PB15
+#ifndef KAKUTEF7HDV
+    #define SPI2_NSS_PIN        PB12
+    #define SPI2_SCK_PIN        PB13
+    #define SPI2_MISO_PIN       PB14
+    #define SPI2_MOSI_PIN       PB15
+#endif
 
 #define SPI4_NSS_PIN            PE4
 #define SPI4_SCK_PIN            PE2
 #define SPI4_MISO_PIN           PE5
 #define SPI4_MOSI_PIN           PE6
 
-#define USE_OSD
-#define USE_MAX7456
-#define MAX7456_SPI_BUS         BUS_SPI2
-#define MAX7456_CS_PIN          SPI2_NSS_PIN
+#ifndef KAKUTEF7HDV
+    #define USE_OSD
+    #define USE_MAX7456
+    #define MAX7456_SPI_BUS     BUS_SPI2
+    #define MAX7456_CS_PIN      SPI2_NSS_PIN
+#endif
 
 #if defined(KAKUTEF7MINI)
 #define M25P16_CS_PIN           SPI1_NSS_PIN
@@ -164,7 +172,15 @@
 
 #define ENABLE_BLACKBOX_LOGGING_ON_SDCARD_BY_DEFAULT
 
-#define DEFAULT_FEATURES        (FEATURE_TX_PROF_SEL | FEATURE_TELEMETRY | FEATURE_OSD | FEATURE_VBAT | FEATURE_CURRENT_METER | FEATURE_BLACKBOX)
+#define USE_LED_STRIP
+#define WS2811_PIN                  PD12
+
+#ifndef KAKUTEF7HDV
+    #define DEFAULT_FEATURES        (FEATURE_TX_PROF_SEL | FEATURE_TELEMETRY | FEATURE_OSD | FEATURE_VBAT | FEATURE_CURRENT_METER | FEATURE_BLACKBOX)
+#else
+	#define DEFAULT_FEATURES        (FEATURE_TX_PROF_SEL | FEATURE_TELEMETRY | FEATURE_VBAT | FEATURE_CURRENT_METER | FEATURE_BLACKBOX)
+#endif
+
 #define DEFAULT_RX_TYPE         RX_TYPE_SERIAL
 #define SERIALRX_UART           SERIAL_PORT_USART6
 #define SERIALRX_PROVIDER       SERIALRX_SBUS
