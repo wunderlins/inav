@@ -41,19 +41,17 @@
 
 #include "sensors/gyro.h"
 
+
+
+
 #define TRI_TAIL_SERVO_ANGLE_MID    (900)
 #define TRI_YAW_FORCE_CURVE_SIZE    (100)
 #define TRI_TAIL_SERVO_MAX_ANGLE    (500)
-
-#define TRI_TAIL_MOTOR_INDEX        (0)
 
 #define TRI_YAW_FORCE_PRECISION     (1000)
 
 #define IsDelayElapsed_us(timestamp_us, delay_us) ((uint32_t)(micros() - timestamp_us) >= delay_us)
 #define IsDelayElapsed_ms(timestamp_ms, delay_ms) ((uint32_t)(millis() - timestamp_ms) >= delay_ms)
-
-
-
 
 PG_REGISTER_WITH_RESET_TEMPLATE(triflightConfig_t, triflightConfig, PG_TRIFLIGHT_CONFIG, 0);
 
@@ -68,6 +66,7 @@ PG_RESET_TEMPLATE(triflightConfig_t, triflightConfig,
     .tri_servo_max_adc             = 0,
     .tri_servo_mid_adc             = 0,
     .tri_servo_min_adc             = 0,
+    .tri_tail_motor_index          = 0,
     .tri_tail_motor_thrustfactor   = 138,
     .tri_tail_servo_speed          = 300,
 );
@@ -227,13 +226,13 @@ void triServoMixer(int16_t PIDoutput)
     triTailTuneStep(gpTailServoConf, gpTailServo);
 
     // Update the tail motor virtual feedback
-    tailMotorStep(motor[TRI_TAIL_MOTOR_INDEX], dT);
+    tailMotorStep(motor[triflightConfig()->tri_tail_motor_index], dT);
 }
 
 int16_t triGetMotorCorrection(uint8_t motorIndex)
 {
     uint16_t correction = 0;
-    if (motorIndex == TRI_TAIL_MOTOR_INDEX)
+    if (motorIndex == triflightConfig()->tri_tail_motor_index)
     {
         // Adjust tail motor speed based on servo angle. Check how much to adjust speed from pitch force curve based on servo angle.
         // Take motor speed up lag into account by shifting the phase of the curve
@@ -665,7 +664,7 @@ static void tailTuneModeThrustTorque(thrustTorque_t *pTT, const bool isThrottleH
                     pTT->servoAvgAngle.sum += triGetCurrentServoAngle();
                     pTT->servoAvgAngle.numOf++;
 
-                    hoverThrottleSum += (motor[TRI_TAIL_MOTOR_INDEX]);
+                    hoverThrottleSum += (motor[triflightConfig()->tri_tail_motor_index]);
 
                     beeperConfirmationBeeps(1);
 

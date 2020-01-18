@@ -2109,11 +2109,22 @@ groups:
         min: MOTOR_ACCELERATION_MIN
         max: MOTOR_ACCELERATION_MAX
         type: uint16_t
+      - name: tri_tail_motor_index
+        field: tri_tail_motor_index
+        min: TAIL_MOTOR_INDEX_MIN
+        max: TAIL_MOTOR_INDEX_MAX
+        type: uint8_t
       - name: tri_servo_angle_at_max
         field: tri_servo_angle_at_max
         min: TAIL_SERVO_ANGLE_MAX_MIN
         max: TAIL_SERVO_ANGLE_MAX_MAX
         type: int16_t
+      - name: tri_servo_feedback
+        field: tri_servo_feedback
+        table: tri_servo_feedback
+        min: TAIL_SERVO_FDBK_MIN
+        max: TAIL_SERVO_FDBK_MAX
+        type: uint8_t
       - name: tri_servo_max_adc
         field: tri_servo_max_adc
         min: TAIL_SERVO_MAX_ADC_MIN

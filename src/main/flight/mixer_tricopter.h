@@ -22,38 +22,44 @@
 
 #include "flight/servos.h"
 
-#define DYNAMIC_YAW_MINTHROTTLE_MIN (0)
-#define DYNMAIC_YAW_MINTHROTTLE_MAX (500)
+#define DYNAMIC_YAW_MINTHROTTLE_MIN  (0)
+#define DYNMAIC_YAW_MINTHROTTLE_MAX  (500)
 
-#define DYNAMIC_YAW_MAXTHROTTLE_MIN (0)
-#define DYNAMIC_YAW_MAXTHROTTLE_MAX (100)
+#define DYNAMIC_YAW_MAXTHROTTLE_MIN  (0)
+#define DYNAMIC_YAW_MAXTHROTTLE_MAX  (100)
 
 #define DYNAMIC_YAW_HOVERTHROTTLE_MIN (0)
 #define DYNAMIC_YAW_HOVERTHROTTLE_MAX (2000)
 
-#define MOTOR_ACC_YAW_CORRECTION_MIN (0)
-#define MOTOR_ACC_YAW_CORRECTION_MAX (200)
+#define MOTOR_ACC_YAW_CORRECTION_MIN  (0)
+#define MOTOR_ACC_YAW_CORRECTION_MAX  (200)
 
-#define MOTOR_ACCELERATION_MIN       (1)
-#define MOTOR_ACCELERATION_MAX       (100)
+#define MOTOR_ACCELERATION_MIN        (1)
+#define MOTOR_ACCELERATION_MAX        (100)
 
-#define TAIL_SERVO_ANGLE_MAX_MIN     (0)
-#define TAIL_SERVO_ANGLE_MAX_MAX     (400)
+#define TAIL_MOTOR_INDEX_MIN          (0)
+#define TAIL_MOTOR_INDEX_MAX          (2)
 
-#define TAIL_SERVO_MAX_ADC_MIN      (0)
-#define TAIL_SERVO_MAX_ADC_MAX      (65535)
+#define TAIL_SERVO_ANGLE_MAX_MIN      (0)
+#define TAIL_SERVO_ANGLE_MAX_MAX      (400)
 
-#define TAIL_SERVO_MID_ADC_MIN      (0)
-#define TAIL_SERVO_MID_ADC_MAX      (65535)
+#define TAIL_SERVO_FDBK_MIN           (0)
+#define TAIL_SERVO_FDBK_MAX           (2)
 
-#define TAIL_SERVO_MIN_ADC_MIN      (0)
-#define TAIL_SERVO_MIN_ADC_MAX      (65535)
+#define TAIL_SERVO_MAX_ADC_MIN        (0)
+#define TAIL_SERVO_MAX_ADC_MAX        (65535)
 
-#define TAIL_THRUST_FACTOR_MIN      (10)
-#define TAIL_THRUST_FACTOR_MAX      (400)
+#define TAIL_SERVO_MID_ADC_MIN        (0)
+#define TAIL_SERVO_MID_ADC_MAX        (65535)
 
-#define TAIL_SERVO_SPEED_MIN        (0)
-#define TAIL_SERVO_SPEED_MAX        (1000)
+#define TAIL_SERVO_MIN_ADC_MIN        (0)
+#define TAIL_SERVO_MIN_ADC_MAX        (65535)
+
+#define TAIL_THRUST_FACTOR_MIN        (10)
+#define TAIL_THRUST_FACTOR_MAX        (400)
+
+#define TAIL_SERVO_SPEED_MIN          (0)
+#define TAIL_SERVO_SPEED_MAX          (1000)
 
 #define TRI_MOTOR_FEEDBACK_LPF_CUTOFF_HZ        (5)
 #define TRI_SERVO_FEEDBACK_LPF_CUTOFF_HZ        (70)
@@ -61,16 +67,17 @@
 typedef struct triflightConfig_s {
     uint16_t tri_dynamic_yaw_minthrottle;
     uint16_t tri_dynamic_yaw_maxthrottle;
-	int16_t tri_dynamic_yaw_hoverthrottle;
-	uint16_t tri_motor_acc_yaw_correction;
-	uint16_t tri_motor_acceleration;
-	int16_t  tri_servo_angle_at_max;
-	uint8_t  tri_servo_feedback;
+    int16_t tri_dynamic_yaw_hoverthrottle;
+    uint16_t tri_motor_acc_yaw_correction;
+    uint16_t tri_motor_acceleration;
+    int16_t  tri_servo_angle_at_max;
+    uint8_t  tri_servo_feedback;
     uint16_t tri_servo_max_adc;
     uint16_t tri_servo_mid_adc;
     uint16_t tri_servo_min_adc;
-	int16_t  tri_tail_motor_thrustfactor;
-	int16_t  tri_tail_servo_speed;
+    uint8_t  tri_tail_motor_index;
+    int16_t  tri_tail_motor_thrustfactor;
+    int16_t  tri_tail_servo_speed;
 } triflightConfig_t;
 
 PG_DECLARE(triflightConfig_t, triflightConfig);
