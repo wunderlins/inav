@@ -146,7 +146,7 @@ static const char * const featureNames[] = {
     "THR_VBAT_COMP", "VBAT", "TX_PROF_SEL", "BAT_PROF_AUTOSWITCH", "MOTOR_STOP",
     "DYNAMIC_FILTERS", "SOFTSERIAL", "GPS", "",
     "", "TELEMETRY", "CURRENT_METER", "3D", "",
-    "", "RSSI_ADC", "LED_STRIP", "DASHBOARD", "",
+    "", "RSSI_ADC", "LED_STRIP", "DASHBOARD", "TRIFLIGHT",
     "BLACKBOX", "", "TRANSPONDER", "AIRMODE",
     "SUPEREXPO", "VTX", "", "", "PWM_SERVO_DRIVER", "PWM_OUTPUT_ENABLE",
     "OSD", "FW_LAUNCH", NULL
