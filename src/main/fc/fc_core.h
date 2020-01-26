@@ -46,3 +46,5 @@ bool isCalibrating(void);
 float getFlightTime(void);
 
 void fcReboot(bool bootLoader);
+
+float getdT(void);

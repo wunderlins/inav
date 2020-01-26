@@ -177,5 +177,5 @@
 #endif
 
 #ifdef STM32F7
-#define USE_ITCM_RAM
+// #define USE_ITCM_RAM
 #endif

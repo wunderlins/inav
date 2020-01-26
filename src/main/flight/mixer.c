@@ -45,6 +45,7 @@
 #include "flight/failsafe.h"
 #include "flight/imu.h"
 #include "flight/mixer.h"
+#include "flight/mixer_tricopter.h"
 #include "flight/pid.h"
 #include "flight/servos.h"
 
@@ -58,6 +59,7 @@ FASTRAM int16_t motor[MAX_SUPPORTED_MOTORS];
 FASTRAM int16_t motor_disarmed[MAX_SUPPORTED_MOTORS];
 static float motorMixRange;
 static float mixerScale = 1.0f;
+static int16_t throttleMin, throttleMax;
 static EXTENDED_FASTRAM motorMixer_t currentMixer[MAX_SUPPORTED_MOTORS];
 static EXTENDED_FASTRAM uint8_t motorCount = 0;
 EXTENDED_FASTRAM int mixerThrottleCommand;
@@ -331,7 +333,7 @@ void FAST_CODE NOINLINE mixTable(const float dT)
 
     int16_t rpyMixRange = rpyMixMax - rpyMixMin;
     int16_t throttleRange;
-    int16_t throttleMin, throttleMax;
+//    int16_t throttleMin, throttleMax;
     static int16_t throttlePrevious = 0;   // Store the last throttle direction for deadband transitions
 
     // Find min and max throttle based on condition.
@@ -398,7 +400,12 @@ void FAST_CODE NOINLINE mixTable(const float dT)
     // roll/pitch/yaw. This could move throttle down, but also up for those low throttle flips.
     if (ARMING_FLAG(ARMED)) {
         for (int i = 0; i < motorCount; i++) {
-            motor[i] = rpyMix[i] + constrain(mixerThrottleCommand * currentMixer[i].throttle, throttleMin, throttleMax);
+            int16_t correction = 0;
+
+            if ((feature(FEATURE_TRIFLIGHT)) && (mixerConfig()->platformType == PLATFORM_TRICOPTER))
+                correction = triGetMotorCorrection(i);
+
+            motor[i] = rpyMix[i] + constrain(mixerThrottleCommand * currentMixer[i].throttle, throttleMin, throttleMax) + correction;
 
             if (failsafeIsActive()) {
                 motor[i] = constrain(motor[i], motorConfig()->mincommand, motorConfig()->maxthrottle);
@@ -450,4 +457,14 @@ void loadPrimaryMotorMixer(void) {
     for (int i = 0; i < MAX_SUPPORTED_MOTORS; i++) {
         currentMixer[i] = *primaryMotorMixer(i);
     }
+}
+
+uint16_t mixGetMotorOutputLow(void)
+{
+    return throttleMin;
+}
+
+uint16_t mixGetMotorOutputHigh(void)
+{
+    return throttleMax;
 }
