@@ -170,6 +170,7 @@
 
 #if defined(KAKUTEF4V2TRI)
 #define USE_DSHOT
+#define USE_ESC_SENSOR
 #endif
 
 #if defined(KAKUTEF4V2) || defined(KAKUTEF4V2TRI)
