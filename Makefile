@@ -64,7 +64,7 @@ endif
 # Things that need to be maintained as the source changes
 #
 
-FORKNAME      = inav
+FORKNAME      = trinav
 
 # Working directories
 SRC_DIR         := $(ROOT)/src/main
