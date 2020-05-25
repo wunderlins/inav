@@ -10,6 +10,7 @@ Build:
 - [Older Development Discussion on rcexplorer.se](https://rcexplorer.se/forums/topic/inav-for-kakutef4v2-based-tricopters/)
 - [Continued Discussion on RCGroups,com](https://www.rcgroups.com/forums/showthread.php?3523531-Triflight-with-INAV)
 - [Impossible tail-servo tilt mechanism](https://www.thingiverse.com/thing:1035497)
+- Servos: Turnigy 210 Servo / BMS-210DMH
 
 ## TriFlight Configuration Options
 
