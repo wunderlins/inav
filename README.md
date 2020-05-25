@@ -1,4 +1,15 @@
-# triflight for iNav 4.1 by jihlein
+# triflight for iNav 4.2 by jihlein
+
+This is a special Branch for iNav that supports tri copters with a special servo that has a feedback wire (analog output of the potentiometer in the servo controller).
+
+Build:
+- 8" Tricopter LR from Dvid Windestal
+- FC: KakuteF4V2
+
+# Ressources
+- [Older Development Discussion on rcexplorer.se](https://rcexplorer.se/forums/topic/inav-for-kakutef4v2-based-tricopters/)
+- [Continued Discussion on RCGroups,com](https://www.rcgroups.com/forums/showthread.php?3523531-Triflight-with-INAV)
+- [Impossible tail-servo tilt mechanism](https://www.thingiverse.com/thing:1035497)
 
 ## TriFlight Configuration Options
 
