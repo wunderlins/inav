@@ -7,6 +7,7 @@ Build:
 - FC: KakuteF4V2
 
 # Ressources
+- triflight iNav 2.4  [2p4p0tf0p5 diff](https://github.com/jihlein/inav/commit/73d5e5295a4e89da7aa6ed960f17e512d7855570) [2p4p0tf0p5 new files](https://github.com/jihlein/inav/commit/ca994a8c20a5305f06020bf433f342b4c4ca543e)
 - [Older Development Discussion on rcexplorer.se](https://rcexplorer.se/forums/topic/inav-for-kakutef4v2-based-tricopters/)
 - [Continued Discussion on RCGroups,com](https://www.rcgroups.com/forums/showthread.php?3523531-Triflight-with-INAV)
 - [Impossible tail-servo tilt mechanism](https://www.thingiverse.com/thing:1035497)
@@ -29,7 +30,17 @@ Build:
 | tri_tail_motor_thrustfactor | 10 | 400 | 138 |  |
 | tri_tail_servo_speed | 0 | 1000 | 300 | deg/s |
 
-## compile
+## Output Mappings
+
+| Actuator | Pad | Comment |
+| --- | --- | --- |
+| Motor 1 | M1 | pos: ? |
+| Motor 2 | M2 | pos: ? |
+| Motor 3 | M3 | pos: ? |
+| Tail Servo | M4 | Only with the iNav Merged branch 2p4p0tf0p5 |
+| Feedback | RSI | Servo feedback wire |
+
+## Compile Firmware on Linux
 
 ### clone and check out branch
 
