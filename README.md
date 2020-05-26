@@ -65,7 +65,7 @@ arm-none-eabi-gcc -dumpversion
 make arm_sdk_install
 ``` 
 
-### Build KAKUTEF4V2
+### Build KAKUTEF4V2TRI
 
 build with recent compiler, override compiler directory in tools.mk
 
