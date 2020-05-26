@@ -36,8 +36,8 @@ Build:
 | Actuator | Pad | Comment | Direction |
 | --- | --- | --- | --- |
 | Motor 1 | M3 | pos: backwards | CCW |
-| Motor 2 | M2 | pos: front right | CW |
-| Motor 3 | M1 | pos: front left | CCW |
+| Motor 2 | M2 | pos: front right | CCW |
+| Motor 3 | M1 | pos: front left | CW |
 | Tail Servo | LED | Only with branch 2p4p0tf0p5 | Reversed |
 | Feedback | RSI | Servo feedback wire | n/a |
 
