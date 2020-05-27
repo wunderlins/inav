@@ -7,6 +7,7 @@ Build:
 - FC: KakuteF4V2
 
 # Ressources
+- [lkaino Triflight Setup instructions](https://github.com/lkaino/Triflight/blob/master/docs/Triflight%20Checklist.md)
 - [known good configuration](https://www.rcgroups.com/forums/showpost.php?p=44425535&postcount=319) for iNav 2.4 triflight (2p4p0tf0p5)
 - triflight iNav 2.4  [2p4p0tf0p5 diff](https://github.com/jihlein/inav/commit/73d5e5295a4e89da7aa6ed960f17e512d7855570) [2p4p0tf0p5 new files](https://github.com/jihlein/inav/commit/ca994a8c20a5305f06020bf433f342b4c4ca543e)
 - [Older Development Discussion on rcexplorer.se](https://rcexplorer.se/forums/topic/inav-for-kakutef4v2-based-tricopters/)
