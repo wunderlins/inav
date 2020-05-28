@@ -154,7 +154,7 @@ mmix 2  1.000  1.000 -0.667  0.000
 smix 0 5 2 100 0 -1
 
 # servo
-servo 5 1000 2000 1500 -100
+servo 5 995 1892 1450 -100
 
 # logic
 
@@ -164,6 +164,7 @@ servo 5 1000 2000 1500 -100
 feature VBAT
 feature DYNAMIC_FILTERS
 feature TRIFLIGHT
+feature BLACKBOX
 feature PWM_OUTPUT_ENABLE
 
 # beeper
@@ -172,16 +173,17 @@ feature PWM_OUTPUT_ENABLE
 
 # serial
 serial 0 0 115200 115200 0 115200
-serial 5 4096 115200 115200 0 115200
+serial 3 4096 115200 115200 0 115200
 
 # led
 
 # color
+
 # mode_color
 
 # aux
 aux 0 0 2 900 1300
-aux 1 1 0 900 1300
+aux 1 1 0 1700 2100
 aux 2 11 2 1300 1700
 aux 3 42 1 900 1300
 
@@ -212,8 +214,11 @@ set baro_hardware = BMP280
 set pitot_hardware = NONE
 set rssi_channel = 12
 set serialrx_provider = CRSF
+set blackbox_device = SPIFLASH
 set motor_pwm_rate = 8000
 set motor_pwm_protocol = DSHOT300
+set align_board_roll = 24
+set align_board_pitch = 28
 set platform_type = TRICOPTER
 set model_preview_type = 1
 set servo_pwm_rate = 330
@@ -224,6 +229,12 @@ set name = Tricopter LR
 set vtx_band = 5
 set vtx_channel = 8
 set vtx_freq = 5917
+set tri_dynamic_yaw_hoverthrottle = 1346
+set tri_servo_max_adc = 2869
+set tri_servo_mid_adc = 1970
+set tri_servo_min_adc = 1113
+set tri_tail_motor_thrustfactor = 109
+set tri_tail_servo_speed = 198
 
 # profile
 profile 1
@@ -270,5 +281,5 @@ set battery_capacity_critical = 1500
 # end the command batch
 batch end
 
-# 
+#
 ```
