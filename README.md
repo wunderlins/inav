@@ -75,6 +75,62 @@ make TARGET=KAKUTEF4V2TRI ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
 #make TARGET=KAKUTEF4V2 ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
 ```
 
+## Tailtune
+
+	left	CW
+	right	CCW
+	tail	CCW
+
+
+### 1. Tail servo bench tuning
+
+Without the configurator. Zero throttle and not touching sticks. Connect battery. Do not arm.
+
+1 Turn on tail tune mode
+1 Push cyclic stick left, right or up shortly to select min, max or mid
+1 Adjust with yaw stick (mid must be very accurate)
+1 Turn off tail tune mode
+1 Save values with stick command (both max down and out)
+1 Remove battery
+
+### 2. hardware servo feedback
+
+Feedback signal is calibrated by 
+
+1 Min, mid and max positions must be set before this (see "Tail servo bench tuning" above). 
+1 pulling down on pitch stick while doing the Tail servo bench tuning. 
+1 If you start this, all bench tuning values will be saved automatically (there is no way to cancel).
+
+### 3. Accelerometer hover calibration
+
+Double check your COG (center of gravity) first. It shall be on the centerline, one third from the front props to the aft prop.
+
+On a calm day, hover in angle mode at least eyeheight. Look for sideways drift and then land.
+
+When disarmed throttle max up, cyclic max to the side opposite to where it drifts. The board will be blinking and make a short beep (if you have a Buzzer) for every 0.1 degree of adjustment.
+
+Adjust, arm, fly, disarm, repeat till it doesn’t start drifting.
+
+### 4. Tail servo hover tuning
+
+1 arm the copter before switching tail tune on
+1 activate tailtune in air
+1  Let it hover and do not touch the sticks for about 30s. It's ok to use the sticks to adjust the hover position but for that time the tuning is paused.
+1 Land and disarm, still having tail tune on
+1 The ready beeping should continue every 2 seconds
+1 The values are now automatically saved (if you disarm first, wait a few seconds and then deactivate the tail tune. Do not use stick command.)
+
+
+## debugging
+
+```set debug_mode=triflight```
+
+The computed angle looks correct. You can observe this by looking at debug2 on the sensors tab, deselect all debug checkboxes except debug. After a successful ongound servo cal, it should indicate roughly 50 - 90 degrees when tilted to the left (tricopter facing forward, looking forward), and 90 - 130 when tilted to the right.
+
+
+https://www.rcgroups.com/forums/showpost.php?p=44099143&postcount=263
+
+
 ## iNav 2.4 Triflight configuration for Tricopter LR
 
 ```
@@ -121,7 +177,6 @@ serial 5 4096 115200 115200 0 115200
 # led
 
 # color
-
 # mode_color
 
 # aux
