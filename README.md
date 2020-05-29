@@ -55,6 +55,8 @@ Build:
 | Tail Servo | LED | Only with branch 2p4p0tf0p5 | Reversed |
 | Feedback | RSI | Servo feedback wire | n/a |
 
+[Manual](docs/kakutef4v2.pdf)
+
 ## Output Mappings KAKUTEF7
 
 | Actuator | Pad | Comment | Direction |
@@ -64,6 +66,24 @@ Build:
 | Motor 3 | M1 | pos: front left | CW |
 | Tail Servo | M5 |  | Reversed? |
 | Feedback | RSI | Servo feedback wire | n/a |
+
+[Manual](docs/Holybro_Kakute_F7_V1.5_Manual.pdf)
+
+### 8 pin molex connector pinout
+
+| Pin | Description |
+| --- | --- |
+| B+ | vBat / Battery |
+| R7 | UART 7 RX
+| G  | Ground
+| I  | Current Sensor ? |
+| M1 | Motor 1 |
+| M2 | Motor 2 |
+| M3 | Motor 3 |
+| M4 | Motor 4 |
+
+Orientation: USB Connector is next to M4
+
 
 ## Output Mappings Matek405*
 
