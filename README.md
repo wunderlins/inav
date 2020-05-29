@@ -102,7 +102,7 @@ Orientation: USB Connector is next to M4
 
 #### GPS Port Layout
 
-![3DR uBlox LEA6 pinout](docs/3DR uBlox LEA6.png)
+![3DR uBlox LEA6 pinout]("docs/3DR uBlox LEA6.png")
 
 from front to back:
 
