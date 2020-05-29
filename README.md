@@ -1,4 +1,4 @@
-# triflight for iNav 4.2 by jihlein
+# triflight for iNav 4.2 by [@jihlein](https://github.com/jihlein/inav/tree/2p4p0tf0p5)
 
 This is a special Branch for iNav that supports tri copters with a special servo that has a feedback wire (analog output of the potentiometer in the servo controller).
 
@@ -107,6 +107,8 @@ build with recent compiler, override compiler directory in tools.mk
 ``` 
 make TARGET=KAKUTEF4V2TRI ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
 make TARGET=KAKUTEF7 ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
+make TARGET=MATEKF405 ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
+# NOTE: change path to compiler as needed
 ```
 
 ## Tailtune
