@@ -3,8 +3,13 @@
 This is a special Branch for iNav that supports tri copters with a special servo that has a feedback wire (analog output of the potentiometer in the servo controller).
 
 Build:
-- 8" Tricopter LR from Dvid Windestal
+- 8" 'Tricopter LR V4' from Dvaid Windestal
 - FC: KakuteF4V2
+- PDB: Matek FCHUB-W
+- SERVO: BMS-210DMH
+- Motors: EMAX RSII-2207 1600KV
+- ESC: BLHeli_S 16A
+
 
 # Ressources
 - [lkaino Triflight Setup instructions](https://github.com/lkaino/Triflight/blob/master/docs/Triflight%20Checklist.md)
@@ -72,7 +77,7 @@ build with recent compiler, override compiler directory in tools.mk
 
 ``` 
 make TARGET=KAKUTEF4V2TRI ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
-#make TARGET=KAKUTEF4V2 ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
+make TARGET=KAKUTEF7 ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
 ```
 
 ## Tailtune
@@ -86,20 +91,20 @@ make TARGET=KAKUTEF4V2TRI ARM_SDK_DIR=tools/gcc-arm-none-eabi-8-2018-q4-major
 
 Without the configurator. Zero throttle and not touching sticks. Connect battery. Do not arm.
 
-1 Turn on tail tune mode
-1 Push cyclic stick left, right or up shortly to select min, max or mid
-1 Adjust with yaw stick (mid must be very accurate)
-1 Turn off tail tune mode
-1 Save values with stick command (both max down and out)
-1 Remove battery
+1. Turn on tail tune mode
+1. Push cyclic stick left, right or up shortly to select min, max or mid
+1. Adjust with yaw stick (mid must be very accurate)
+1. Turn off tail tune mode
+1. Save values with stick command (both max down and out)
+1. Remove battery
 
 ### 2. hardware servo feedback
 
 Feedback signal is calibrated by 
 
-1 Min, mid and max positions must be set before this (see "Tail servo bench tuning" above). 
-1 pulling down on pitch stick while doing the Tail servo bench tuning. 
-1 If you start this, all bench tuning values will be saved automatically (there is no way to cancel).
+1. Min, mid and max positions must be set before this (see "Tail servo bench tuning" above). 
+1. pulling down on pitch stick while doing the Tail servo bench tuning. 
+1. If you start this, all bench tuning values will be saved automatically (there is no way to cancel).
 
 ### 3. Accelerometer hover calibration
 
@@ -113,12 +118,12 @@ Adjust, arm, fly, disarm, repeat till it doesn’t start drifting.
 
 ### 4. Tail servo hover tuning
 
-1 arm the copter before switching tail tune on
-1 activate tailtune in air
-1  Let it hover and do not touch the sticks for about 30s. It's ok to use the sticks to adjust the hover position but for that time the tuning is paused.
-1 Land and disarm, still having tail tune on
-1 The ready beeping should continue every 2 seconds
-1 The values are now automatically saved (if you disarm first, wait a few seconds and then deactivate the tail tune. Do not use stick command.)
+1. arm the copter before switching tail tune on
+1. activate tailtune in air
+1.  Let it hover and do not touch the sticks for about 30s. It's ok to use the sticks to adjust the hover position but for that time the tuning is paused.
+1. Land and disarm, still having tail tune on
+1. The ready beeping should continue every 2 seconds
+1. The values are now automatically saved (if you disarm first, wait a few seconds and then deactivate the tail tune. Do not use stick command.)
 
 
 ## debugging
@@ -197,6 +202,10 @@ aux 3 42 1 900 1300
 #wp 0 invalid
 
 # osd_layout
+osd_layout 0 2 0 0 V
+osd_layout 0 9 1 2 H
+osd_layout 0 32 12 1 V
+osd_layout 0 33 1 1 V
 
 # master
 set looptime = 500
@@ -224,7 +233,9 @@ set model_preview_type = 1
 set servo_pwm_rate = 330
 set applied_defaults = 2
 set mc_airmode_type = THROTTLE_THRESHOLD
+set osd_crosshairs_style = AIRCRAFT
 set i2c_speed = 800KHZ
+set debug_mode = TRIFLIGHT
 set name = Tricopter LR
 set vtx_band = 5
 set vtx_channel = 8
@@ -281,5 +292,5 @@ set battery_capacity_critical = 1500
 # end the command batch
 batch end
 
-#
+# 
 ```
