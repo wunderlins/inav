@@ -20,6 +20,12 @@ Build:
 - [Impossible tail-servo tilt mechanism](https://www.thingiverse.com/thing:1035497)
 - Servos: [Turnigy 210 Servo](https://hobbyking.com/en_us/turnigytm-tgy-210dmh-coreless-w-heat-sink-ds-mg-servo-3-9kg-0-13sec-16g.html?___store=en_us) / BMS-210DMH
 
+# Firmware 2p4p0tf0p5 HEX Files
+- [KAKUTEF4V2TRI](hex/2.4.0/trinav_2.4.0_KAKUTEF4V2TRI.hex)
+- [KAKUTEF7](hex/2.4.0/trinav_2.4.0_KAKUTEF7.hex)
+- [MATEKF405](hex/2.4.0/trinav_2.4.0_MATEKF405.hex)
+
+
 ## TriFlight Configuration Options
 
 | name | min | max | default | unit |
@@ -37,7 +43,9 @@ Build:
 | tri_tail_motor_thrustfactor | 10 | 400 | 138 |  |
 | tri_tail_servo_speed | 0 | 1000 | 300 | deg/s |
 
-## Output Mappings 2p4p0tf0p5/KAKUTEF4V2TRI
+# Output Mappings for 2p4p0tf0p5
+
+## Output Mappings KAKUTEF4V2TRI
 
 | Actuator | Pad | Comment | Direction |
 | --- | --- | --- | --- |
@@ -46,6 +54,27 @@ Build:
 | Motor 3 | M1 | pos: front left | CW |
 | Tail Servo | LED | Only with branch 2p4p0tf0p5 | Reversed |
 | Feedback | RSI | Servo feedback wire | n/a |
+
+## Output Mappings KAKUTEF7
+
+| Actuator | Pad | Comment | Direction |
+| --- | --- | --- | --- |
+| Motor 1 | M3 | pos: backwards | CCW |
+| Motor 2 | M2 | pos: front right | CCW |
+| Motor 3 | M1 | pos: front left | CW |
+| Tail Servo | M5 |  | Reversed? |
+| Feedback | RSI | Servo feedback wire | n/a |
+
+## Output Mappings Matek405*
+
+| Actuator | Pad | Comment | Direction |
+| --- | --- | --- | --- |
+| Motor 1 | M2 | pos: backwards | CCW |
+| Motor 2 | M3 | pos: front right | CCW |
+| Motor 3 | M4 | pos: front left | CW |
+| Tail Servo | M1 |  | Reversed? |
+| Feedback | RSI? | Servo feedback wire | n/a |
+
 
 ## Compile Firmware on Linux
 
