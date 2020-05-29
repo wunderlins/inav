@@ -49,7 +49,7 @@ Build:
 
 | Actuator | Pad | Comment | Direction |
 | --- | --- | --- | --- |
-| Motor 1 | M3 | pos: backwards | CCW |
+| Motor 1 | M3 | pos: tail | CCW |
 | Motor 2 | M2 | pos: front right | CCW |
 | Motor 3 | M1 | pos: front left | CW |
 | Tail Servo | LED | Only with branch 2p4p0tf0p5 | Reversed |
@@ -59,7 +59,7 @@ Build:
 
 | Actuator | Pad | Comment | Direction |
 | --- | --- | --- | --- |
-| Motor 1 | M3 | pos: backwards | CCW |
+| Motor 1 | M3 | pos: tail | CCW |
 | Motor 2 | M2 | pos: front right | CCW |
 | Motor 3 | M1 | pos: front left | CW |
 | Tail Servo | M5 |  | Reversed? |
@@ -69,7 +69,7 @@ Build:
 
 | Actuator | Pad | Comment | Direction |
 | --- | --- | --- | --- |
-| Motor 1 | M2 | pos: backwards | CCW |
+| Motor 1 | M2 | pos: tail | CCW |
 | Motor 2 | M3 | pos: front right | CCW |
 | Motor 3 | M4 | pos: front left | CW |
 | Tail Servo | M1 |  | Reversed? |
