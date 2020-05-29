@@ -116,7 +116,7 @@ from front to back:
 
 #### Magnetormeter I2C Port
 
-From left to right
+from front to back:
 
 | pos | color | function |
 | --- | --- | --- |
