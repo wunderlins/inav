@@ -96,6 +96,36 @@ Orientation: USB Connector is next to M4
 | Feedback | RSI? | Servo feedback wire | n/a |
 
 
+## Peripherals
+
+### 3DR uBLOX GPS V1.2
+
+#### GPS Port Layout
+
+from front to back:
+
+| pos | color | function |
+| --- | --- | --- |
+| 1 | red | VCC |
+| 2 | blk | TX |
+| 3 | blk | RX |
+| 4 | blk | n/a |
+| 5 | blk | NC |
+| 6 | blk | GND |
+
+
+#### Magnetormeter I2C Port
+
+From left to right
+
+| pos | color | function |
+| --- | --- | --- |
+| 1 | red | VCC |
+| 2 | blk | SCL |
+| 3 | blk | SDA |
+| 4 | blk | GND |
+
+
 ## Compile Firmware on Linux
 
 ### clone and check out branch
