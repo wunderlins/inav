@@ -3,7 +3,7 @@
 This is a special Branch for iNav that supports tri copters with a special servo that has a feedback wire (analog output of the potentiometer in the servo controller).
 
 Build:
-- 8" 'Tricopter LR V4' from David Windestål
+- 8" [Tricopter LR](https://rcexplorer.se/product_archive/2020/05/tricopter-lr/) from David Windestål
 - FC: KakuteF4V2
 - PDB: Matek FCHUB-W
 - SERVO: BMS-210DMH
@@ -26,7 +26,7 @@ David has released the CAD Files of the Tricopter LR when he closed the shop. Pr
 
 (c) David Windestal, [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-- [Tricopter LR V4](docs/CAD/TricopterLR.zip) [Banggood](https://www.banggood.com/Tricopter-LR-267-286mm-8-inch-3-Axis-Y-Type-Pure-Carbon-Fiber-Frame-with-5mm-Arm-for-RC-FPV-racing-Drone-p-1652748.html?rmmds=search&cur_warehouse=CN)
+- [Tricopter LR](docs/CAD/TricopterLR.zip) [Banggood](https://www.banggood.com/Tricopter-LR-267-286mm-8-inch-3-Axis-Y-Type-Pure-Carbon-Fiber-Frame-with-5mm-Arm-for-RC-FPV-racing-Drone-p-1652748.html?rmmds=search&cur_warehouse=CN)
 - [Servo Setup Tool for Tricopter LR](docs/CAD/ServoSetupTool)
 - [Tilt Mechanism 3D files](docs/CAD/TiltMechanism.zip)
 
