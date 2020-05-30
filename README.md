@@ -3,7 +3,7 @@
 This is a special Branch for iNav that supports tri copters with a special servo that has a feedback wire (analog output of the potentiometer in the servo controller).
 
 Build:
-- 8" 'Tricopter LR V4' from Dvaid Windestal
+- 8" 'Tricopter LR V4' from David Windestål
 - FC: KakuteF4V2
 - PDB: Matek FCHUB-W
 - SERVO: BMS-210DMH
