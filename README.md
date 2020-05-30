@@ -1,6 +1,6 @@
 # triflight for iNav 4.2 by [@jihlein](https://github.com/jihlein/inav/tree/2p4p0tf0p5)
 
-This is a special Branch for iNav that supports tri copters with a special servo that has a feedback wire (analog output of the potentiometer in the servo controller).
+This is a special Branch for iNav that supports tri copters with a servo that has a feedback wire (analog output of the potentiometer in the servo controller).
 
 Build:
 - 8" [Tricopter LR](https://rcexplorer.se/product_archive/2020/05/tricopter-lr/) from David Windestål
