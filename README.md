@@ -20,6 +20,16 @@ Build:
 - [Impossible tail-servo tilt mechanism](https://www.thingiverse.com/thing:1035497)
 - Servos: [Turnigy 210 Servo](https://hobbyking.com/en_us/turnigytm-tgy-210dmh-coreless-w-heat-sink-ds-mg-servo-3-9kg-0-13sec-16g.html?___store=en_us) / BMS-210DMH
 
+## CAD Files
+
+David has released the CAD Files of the Tricopter LR when he closed the shop. Preserving the files here. 
+
+(c) David Windestal, [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+- [Tricopter LR V4](docs/CAD/TricopterLR.zip) [Banggood](https://www.banggood.com/Tricopter-LR-267-286mm-8-inch-3-Axis-Y-Type-Pure-Carbon-Fiber-Frame-with-5mm-Arm-for-RC-FPV-racing-Drone-p-1652748.html?rmmds=search&cur_warehouse=CN)
+- [Servo Setup Tool for Tricopter LR](docs/CAD/ServoSetupTool)
+- [Tilt Mechanism 3D files](docs/CAD/TiltMechanism.zip)
+
 # Firmware 2p4p0tf0p5 HEX Files
 - [KAKUTEF4V2TRI](hex/2.4.0/trinav_2.4.0_KAKUTEF4V2TRI.hex)
 - [KAKUTEF7](hex/2.4.0/trinav_2.4.0_KAKUTEF7.hex)
