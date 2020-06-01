@@ -229,13 +229,325 @@ The computed angle looks correct. You can observe this by looking at debug2 on t
 https://www.rcgroups.com/forums/showpost.php?p=44099143&postcount=263
 
 
-## iNav 2.4 Triflight configuration for Tricopter LR
+## iNav 2.4 Triflight KakuteF4 configuration for Tricopter LR
 
 ```
 diff
 
+
+
 # version
+
 # INAV/KAKUTEF4V2TRI 2.4.0 May 26 2020 / 18:28:11 (10da960b2)
+
+# GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
+
+
+
+# start the command batch
+
+batch start
+
+
+
+# resources
+
+
+
+# mixer
+
+mmix 0  1.000  0.000  1.333  0.000
+
+mmix 1  1.000 -1.000 -0.667  0.000
+
+mmix 2  1.000  1.000 -0.667  0.000
+
+
+
+# servo mix
+
+smix 0 5 2 100 0 -1
+
+
+
+# servo
+
+servo 5 995 1892 1450 -100
+
+
+
+# logic
+
+
+
+# gf
+
+
+
+# feature
+
+feature VBAT
+
+feature DYNAMIC_FILTERS
+
+feature TRIFLIGHT
+
+feature BLACKBOX
+
+feature PWM_OUTPUT_ENABLE
+
+
+
+# beeper
+
+
+
+# map
+
+
+
+# serial
+
+serial 0 0 115200 115200 0 115200
+
+serial 3 4096 115200 115200 0 115200
+
+
+
+# led
+
+
+
+# color
+
+
+
+# mode_color
+
+
+
+# aux
+
+aux 0 0 2 900 1300
+
+aux 1 1 0 1700 2100
+
+aux 2 11 2 1300 1700
+
+aux 3 42 1 900 1300
+
+
+
+# adjrange
+
+
+
+# rxrange
+
+
+
+# temp_sensor
+
+
+
+# wp
+
+#wp 0 invalid
+
+
+
+# osd_layout
+
+osd_layout 0 2 0 0 V
+
+osd_layout 0 9 1 2 H
+
+osd_layout 0 32 12 1 V
+
+osd_layout 0 33 1 1 V
+
+
+
+# master
+
+set looptime = 500
+
+set gyro_hardware_lpf = 256HZ
+
+set gyro_lpf_hz = 110
+
+set gyro_lpf_type = PT1
+
+set acc_hardware = MPU6500
+
+set acczero_x = 23
+
+set acczero_y = -17
+
+set accgain_x = 4089
+
+set accgain_y = 4093
+
+set accgain_z = 4043
+
+set mag_hardware = NONE
+
+set baro_hardware = BMP280
+
+set pitot_hardware = NONE
+
+set rssi_channel = 12
+
+set serialrx_provider = CRSF
+
+set blackbox_device = SPIFLASH
+
+set motor_pwm_rate = 8000
+
+set motor_pwm_protocol = DSHOT300
+
+set align_board_roll = 24
+
+set align_board_pitch = 28
+
+set platform_type = TRICOPTER
+
+set model_preview_type = 1
+
+set servo_pwm_rate = 330
+
+set applied_defaults = 2
+
+set mc_airmode_type = THROTTLE_THRESHOLD
+
+set osd_crosshairs_style = AIRCRAFT
+
+set i2c_speed = 800KHZ
+
+set debug_mode = TRIFLIGHT
+
+set name = Tricopter LR
+
+set vtx_band = 5
+
+set vtx_channel = 8
+
+set vtx_freq = 5917
+
+set tri_dynamic_yaw_hoverthrottle = 1346
+
+set tri_servo_max_adc = 2869
+
+set tri_servo_mid_adc = 1970
+
+set tri_servo_min_adc = 1113
+
+set tri_tail_motor_thrustfactor = 109
+
+set tri_tail_servo_speed = 198
+
+
+
+# profile
+
+profile 1
+
+
+
+set mc_p_pitch = 45
+
+set mc_i_pitch = 50
+
+set mc_d_pitch = 39
+
+set mc_i_roll = 60
+
+set mc_d_roll = 34
+
+set mc_p_yaw = 180
+
+set mc_i_yaw = 60
+
+set mc_d_yaw = 3
+
+set max_angle_inclination_rll = 600
+
+set max_angle_inclination_pit = 600
+
+set dterm_lpf_hz = 60
+
+set dterm_lpf_type = PT1
+
+set dterm_lpf2_hz = 170
+
+set dterm_lpf2_type = PT1
+
+set use_dterm_fir_filter = OFF
+
+set yaw_lpf_hz = 30
+
+set dterm_setpoint_weight =  0.750
+
+set dterm_notch_hz = 162
+
+set dterm_notch_cutoff = 120
+
+set heading_hold_rate_limit = 45
+
+set nav_mc_vel_xy_i = 14
+
+set nav_mc_heading_p = 65
+
+set d_boost_factor =  1.500
+
+set antigravity_gain =  2.000
+
+set antigravity_accelerator =  5.000
+
+set tpa_rate = 20
+
+set tpa_breakpoint = 1650
+
+set rc_yaw_expo = 70
+
+set roll_rate = 30
+
+set pitch_rate = 30
+
+set yaw_rate = 30
+
+
+
+# battery_profile
+
+battery_profile 1
+
+
+
+set battery_capacity = 5000
+
+set battery_capacity_warning = 2000
+
+set battery_capacity_critical = 1500
+
+
+
+# end the command batch
+
+batch end
+
+
+
+# 
+```
+
+Kakute F7
+
+```
+# diff
+
+# version
+# INAV/KAKUTEF7 2.4.0 May 24 2020 / 10:52:08 (5d4ca9f93)
 # GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
 
 # start the command batch
@@ -252,17 +564,15 @@ mmix 2  1.000  1.000 -0.667  0.000
 smix 0 5 2 100 0 -1
 
 # servo
-servo 5 995 1892 1450 -100
+servo 5 944 1966 1447 100
 
 # logic
 
 # gf
 
 # feature
-feature VBAT
 feature DYNAMIC_FILTERS
 feature TRIFLIGHT
-feature BLACKBOX
 feature PWM_OUTPUT_ENABLE
 
 # beeper
@@ -270,7 +580,7 @@ feature PWM_OUTPUT_ENABLE
 # map
 
 # serial
-serial 0 0 115200 115200 0 115200
+serial 2 2 115200 115200 0 115200
 serial 3 4096 115200 115200 0 115200
 
 # led
@@ -281,9 +591,10 @@ serial 3 4096 115200 115200 0 115200
 
 # aux
 aux 0 0 2 900 1300
-aux 1 1 0 1700 2100
-aux 2 11 2 1300 1700
-aux 3 42 1 900 1300
+aux 1 1 0 900 1300
+aux 2 3 0 900 1300
+aux 3 11 2 1275 1675
+aux 4 42 1 900 1300
 
 # adjrange
 
@@ -295,95 +606,100 @@ aux 3 42 1 900 1300
 #wp 0 invalid
 
 # osd_layout
-osd_layout 0 2 0 0 V
+osd_layout 0 0 26 14 V
+osd_layout 0 1 12 0 H
+osd_layout 0 7 13 11 V
 osd_layout 0 9 1 2 H
-osd_layout 0 32 12 1 V
-osd_layout 0 33 1 1 V
+osd_layout 0 11 2 12 V
+osd_layout 0 12 1 14 V
+osd_layout 0 14 10 14 V
+osd_layout 0 15 17 14 V
+osd_layout 0 22 15 14 V
+osd_layout 0 23 24 12 V
+osd_layout 0 28 23 13 V
+osd_layout 0 30 2 1 V
+osd_layout 0 32 1 13 V
 
 # master
-set looptime = 500
+set looptime = 250
 set gyro_hardware_lpf = 256HZ
-set gyro_lpf_hz = 110
+set gyro_lpf_hz = 90
 set gyro_lpf_type = PT1
-set acc_hardware = MPU6500
-set acczero_x = 23
-set acczero_y = -17
-set accgain_x = 4089
-set accgain_y = 4093
-set accgain_z = 4043
+set gyro_notch1_hz = 400
+set gyro_notch1_cutoff = 300
+set gyro_notch2_hz = 200
+set gyro_notch2_cutoff = 100
+set gyro_stage2_lowpass_type = PT1
+set acc_hardware = MPU6000
+set acczero_x = 74
+set acczero_y = -13
+set acczero_z = -87
+set accgain_x = 4067
+set accgain_y = 4069
+set accgain_z = 4068
+set align_mag = CW90FLIP
 set mag_hardware = NONE
 set baro_hardware = BMP280
 set pitot_hardware = NONE
-set rssi_channel = 12
+set min_check = 1050
 set serialrx_provider = CRSF
-set blackbox_device = SPIFLASH
 set motor_pwm_rate = 8000
 set motor_pwm_protocol = DSHOT300
-set align_board_roll = 24
-set align_board_pitch = 28
+set throttle_idle =  10.000
+set vbat_scale = 1110
+set current_meter_scale = 410
 set platform_type = TRICOPTER
 set model_preview_type = 1
-set servo_pwm_rate = 330
-set applied_defaults = 2
+set servo_pwm_rate = 200
+set applied_defaults = 1
 set mc_airmode_type = THROTTLE_THRESHOLD
-set osd_crosshairs_style = AIRCRAFT
-set i2c_speed = 800KHZ
-set debug_mode = TRIFLIGHT
 set name = Tricopter LR
 set vtx_band = 5
 set vtx_channel = 8
 set vtx_freq = 5917
-set tri_dynamic_yaw_hoverthrottle = 1346
-set tri_servo_max_adc = 2869
-set tri_servo_mid_adc = 1970
-set tri_servo_min_adc = 1113
-set tri_tail_motor_thrustfactor = 109
-set tri_tail_servo_speed = 198
+set tri_servo_max_adc = 3009
+set tri_servo_mid_adc = 1947
+set tri_servo_min_adc = 983
+set tri_tail_servo_speed = 208
 
 # profile
 profile 1
 
-set mc_p_pitch = 45
-set mc_i_pitch = 50
-set mc_d_pitch = 39
-set mc_i_roll = 60
-set mc_d_roll = 34
-set mc_p_yaw = 180
-set mc_i_yaw = 60
-set mc_d_yaw = 3
-set max_angle_inclination_rll = 600
-set max_angle_inclination_pit = 600
-set dterm_lpf_hz = 60
+set mc_p_pitch = 55
+set mc_i_pitch = 40
+set mc_d_pitch = 15
+set mc_p_roll = 55
+set mc_i_roll = 40
+set mc_d_roll = 15
+set mc_p_yaw = 90
+set mc_i_yaw = 20
+set dterm_lpf_hz = 80
 set dterm_lpf_type = PT1
-set dterm_lpf2_hz = 170
 set dterm_lpf2_type = PT1
 set use_dterm_fir_filter = OFF
 set yaw_lpf_hz = 30
-set dterm_setpoint_weight =  0.750
-set dterm_notch_hz = 162
-set dterm_notch_cutoff = 120
-set heading_hold_rate_limit = 45
-set nav_mc_vel_xy_i = 14
-set nav_mc_heading_p = 65
+set dterm_setpoint_weight =  0.800
+set dterm_notch_hz = 260
+set dterm_notch_cutoff = 160
+set mc_iterm_relax = RPY
 set d_boost_factor =  1.500
+set d_boost_max_at_acceleration =  5000.000
+set d_boost_gyro_delta_lpf_hz = 65
 set antigravity_gain =  2.000
 set antigravity_accelerator =  5.000
 set tpa_rate = 20
 set tpa_breakpoint = 1650
-set rc_yaw_expo = 70
-set roll_rate = 30
-set pitch_rate = 30
-set yaw_rate = 30
+set roll_rate = 70
+set pitch_rate = 55
+set yaw_rate = 25
 
 # battery_profile
 battery_profile 1
 
-set battery_capacity = 5000
-set battery_capacity_warning = 2000
-set battery_capacity_critical = 1500
+set battery_capacity = 10000
+set battery_capacity_warning = 4000
+set battery_capacity_critical = 3000
 
 # end the command batch
 batch end
-
-# 
 ```
